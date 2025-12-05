@@ -1,0 +1,391 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+*{ font-family: "Google Sans Flex"; }
+
+/*#region PALETTE*/
+    :root
+    {
+        --flatBackground: #26282b;
+        --greyGradientLight: #26282b;
+        --greyGradientDark: #1c1e22;
+        --borderColor: #464c56;
+
+        --importantText: #d5d5d6;
+        --basicText: #898a8c;
+
+        --orangeLight: #fea735;
+        --orangeDark: #fe7235;
+
+        --limeLight: #88ff6b;
+        --limeDark: #00a775;
+    }
+/*#endregion PALETTE*/
+
+/*#region GENERAL*/
+    body
+    {
+        background-color: var(--flatBackground);
+
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+    }
+
+    p
+    {
+        color: var(--basicText);
+        text-shadow: 2px 2px 10px #000000,
+                     -1px -1px 4px #ffffff30;
+    }
+
+    h1.PageHeader
+    {
+        text-align: center;
+        font-size: 10vh;
+        
+        background-image: linear-gradient(-45deg, var(--orangeLight), var(--orangeDark));
+        background-size: 400%;
+        background-clip: text;
+        -moz-background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+
+        filter: drop-shadow(10px 10px 10px #00000050);
+
+        animation: logoGradient 5s ease infinite;
+    }
+/*#endregion GENERAL*/
+
+
+/*#region NAVBAR*/
+
+    /*#region NAVBAR-Bar*/
+        nav.navbar
+        {
+            height: 10vh;
+            display: flex;
+            justify-content: space-between;
+            margin: 5px;
+            margin-top: 10px;
+
+            overflow: hidden;
+
+            background-color: var(--flatBackground);
+            box-shadow:  10px 10px 30px #00000080, 
+                    0 0 30px #ffffff20;
+
+            border-radius: 50px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: var(--borderColor);
+
+            align-items: center;
+
+            transition: box-shadow .5s;
+        }
+            nav.navbar:hover
+            {
+                box-shadow:  10px 10px 30px #000000ca, 
+                        0 0 30px #ffffff40;
+            }
+    /*#endregion NAVBAR-Bar*/
+
+
+     /*#region NAVBAR-Img*/
+        .navbar img
+        {
+            height: 70%;
+            width: auto;
+            padding-left: 25px;
+            padding-right: 15px;
+
+            float: left;
+        }
+
+        .navbar a.image
+        {
+            height: 100%;
+            align-content: center;
+
+            filter: drop-shadow( 3px 3px 3px #00000050);
+
+            transition: transform .2s,
+                        filter .2s;
+        }
+            .navbar a.image:hover
+            {
+                transform: translateY(-2px);
+                filter: drop-shadow( 3px 5px 3px #00000050);
+
+                cursor: pointer;
+            }
+     /*#endregion NAVBAR-Img*/
+
+     /*#region NAVBAR-LogoText*/
+        .navbar a.logo
+        {
+            color: var(--orangeLight);
+            font-size: x-large;
+            font-weight: bold;
+            text-decoration: none;
+
+            background-image: linear-gradient(-45deg, var(--orangeLight), var(--orangeDark));
+            background-size: 400%;
+            background-clip: text;
+            -moz-background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+
+            filter: drop-shadow(0 0 5px #00000050);
+
+            transition: transform .2s,
+                        filter .2s;
+            animation: logoGradient 5s ease infinite;
+        }
+            .navbar a.logo:hover
+            {
+                transform: translateY(-2px);
+                filter: drop-shadow( 0 4px 2px #00000070);
+            }
+
+            @keyframes logoGradient
+            {
+                0%      { background-position: 0% 50%; }
+                50%     { background-position: 100% 50%; }
+                100%    { background-position: 0% 50%;}
+            }
+     /*#endregion NAVBAR-Bold*/
+
+
+     /*#region NAVBAR-Ul*/
+        .navbar ul
+        {
+            list-style: none;
+            margin-left: auto;
+            padding-right: 20px;
+        }
+     /*#endregion NAVBAR-Ul*/
+
+    /*#region NAVBAR-Li*/
+        .navbar li
+        {
+            float: left;
+            font-size: medium;
+
+            color: var(--importantText);
+            text-decoration: none;
+            text-shadow: 0 0 10px #000000;
+            padding: 15px;
+            margin:5px;
+
+            border-radius: 50px;
+            border-style: solid;
+            border-width: 1px;
+            border-color: #ffffff00;
+
+            transition: box-shadow .2s,
+                        text-shadow .2s,
+                        border-color .2s,
+                        transform .2s;
+        }
+            .navbar li:hover
+            {
+                box-shadow: 5px 5px 10px #00000050, 
+                        0px 0px 10px #ffffff15;
+
+                text-shadow: 2px 2px 5px #000000;
+                color: var(--orangeLight);
+                border-color: var(--orangeDark);
+                transform: translateY(-2px);
+
+                cursor: pointer;
+            }
+        
+        .navbar li a
+        {
+            text-decoration: none;
+            color: var(--importantText);
+
+            transition: color .2s;
+        }
+            .navbar li a:hover
+            {
+                color: var(--orangeLight);
+            }
+    /*#endregion NAVBAR-Li*/
+
+/*#endregion NAVBAR*/
+
+/*#region FOOTER*/
+    footer.footer
+    {
+        background-color: var(--greyGradientDark);
+        width: 100vw;
+        max-height: 15vw;
+
+        box-shadow: inset 0 30px 30px -20px #00000070;
+
+        display: flex;
+        flex: 1;
+    }
+/*#endregion FOOTER*/
+
+
+/*#region PRICING*/
+
+    /*#region PACKAGES*/
+        ul.Packages
+        {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        /*#region PACKAGES-Li*/
+            .Packages li
+            {
+                float: left;
+
+                width: 25vw;
+                
+                margin-left: 2vw;
+                margin-right: 2vw;
+
+                background-image: linear-gradient(var(--greyGradientLight), var(--greyGradientDark));
+
+                border-radius: 10%;
+                border-style: solid;
+                border-width: 1px;
+                border-color: var(--borderColor);
+
+                text-align: center;
+
+                box-shadow: 5px 5px 20px #00000090,
+                            -5px -8px 20px #ffffff10;
+
+                transition: box-shadow .5s;
+            }
+                .Packages li:hover
+                {
+                    box-shadow: 6px 6px 30px #00000090,
+                            -6px -9px 30px #ffffff10;
+                }
+        /*#endregion PACKAGES-Li*/
+    
+        /*#region PACKAGES-Title*/
+            .Packages h1
+            {
+                margin-top: 20px;
+                margin-bottom: 0px;
+
+                font-size: 5vw;
+                text-align: center;
+
+                text-shadow: 5px 5px 10px #00000050,
+                            -3px -3px 10px #ffffff10;
+            }
+
+            .Packages .Lemon h1
+            { color: var(--orangeLight); }
+            .Packages .Lime h1
+            { color: var(--limeLight); }
+        /*#endregion PACKAGES-Title*/
+
+        /*#region PACKAGES-Price*/
+            .Packages h2.Price, .Packages h2.Price p
+            {
+                display: flex;
+                font-size: 4vw;
+                color: transparent;
+
+                margin: 0px;
+                margin-top: 5px;
+                transform: translateX(25%);
+                
+                background-color: #0000008d;
+                background-clip: text;
+                -moz-background-clip: text;
+                -webkit-background-clip: text;
+
+                text-shadow: 3px 3px 3px #ffffff0a;
+            }
+            .Packages h2.Price p
+            {
+                font-size: 2vw;
+                background-color: #00000080;
+                text-shadow: 2px 2px 3px #ffffff09;
+                margin: 0;
+                transform: translateX(0vw);
+            }
+        /*#endregion PACKAGES-Price*/
+    
+        /*#region PACKAGES-Divider*/
+            .Packages div.Divider
+            {
+                background-color: var(--borderColor);
+
+                width: 90%;
+                height: 1px;
+                border-radius: 50%;
+
+                margin: auto;
+
+                box-shadow: 1px 1px 3px #0000008d,
+                            -1px 0 3px #ffffff30;
+            }
+        /*#endregion PACKAGES-Divider*/
+    
+        /*#region PACKAGES-Features*/
+            .Packages p.Features
+            {
+                margin-top: 0;
+                font-size: 1.3vw;
+                color: var(--basicText);
+            }
+        /*#endregion PACKAGES-Features*/
+
+        /*#region PACKAGES-Button*/
+            .Packages button
+            {
+                margin-bottom: 25px;
+                width: 90%;
+                height: 5vw;
+
+                border-style: none;
+                border-radius: 30px;
+
+                font-size: 1.7vw;
+                font-weight: bold;
+                color: var(--greyGradientDark);
+
+                box-shadow: 5px 5px 10px #00000050,
+                            -5px -5px 10px #ffffff10;
+
+                transition: box-shadow .2s,
+                            transform .2s;
+            }
+                .Packages button:hover
+                {
+                    box-shadow: 6px 8px 10px #00000055,
+                                -5px -5px 10px #ffffff15;
+
+                    transform: translateY(-6px);
+
+                    cursor: pointer;
+                }
+
+            .Packages .Lemon button
+            { background-image: linear-gradient(-45deg, var(--orangeDark), var(--orangeLight)); }
+
+            .Packages .Lime button
+            { background-image: linear-gradient(-45deg, var(--limeDark), var(--limeLight)); }
+
+        /*#endregion PACKAGES-Button*/
+        
+    /*#endregion PACKAGES*/
+
+/*#endregion PRICING*/
